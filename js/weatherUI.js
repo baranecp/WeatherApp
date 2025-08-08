@@ -15,6 +15,7 @@ export function render_left_side(current, location, condition) {
   const img = document.createElement("img");
   if (condition.text === "Sunny") img.src = sunny;
   img.alt = condition.text;
+  img.classList.add("current__img");
   const span = section.querySelector("span");
   section.insertBefore(img, span.nextSibling);
 }

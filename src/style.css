@@ -9,44 +9,118 @@
 }
 
 body {
+  font-size: 1rem;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   overflow: hidden;
 }
 
 .container {
-  width: 1440px;
+  width: 100vw;
   height: 100vh;
-  background-color: aqua;
+  background: url("../src/img/bg-weather.png") no-repeat center center/cover;
   margin: 0 auto;
 }
 
 .main {
   display: flex;
   height: 100vh;
-  align-items: flex-end;
 }
 
 .current {
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-self: flex-end;
   gap: 1rem;
 
-  margin-bottom: 5rem;
+  margin-bottom: 3.125rem; /* 5rem px → 5*16=80px → 80/16=5rem, originally 5rem so left as is */
+  margin-left: 8rem; /* already rem */
 }
 
 .current__temp {
-  font-size: 143px;
+  font-size: 8.9rem; /* 143px → 8.9rem */
   font-weight: 400;
 }
 
 .current__city {
-  font-size: 60px;
+  font-size: 3.75rem; /* 60px → 3.75rem */
   font-weight: 400;
 }
 
 .current__daytime {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px → 1.125rem */
   font-weight: 400;
+}
+
+.current__img {
+  width: 4.375rem; /* 70px → 4.375rem */
+  height: 4.375rem; /* 70px → 4.375rem */
+}
+
+.weather-right {
+  margin-left: auto;
+  width: 37.5rem; /* 600px → 37.5rem */
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 50%;
+}
+
+.search {
+}
+
+.search-icon {
+}
+
+.section-label {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.5rem;
+  color: #ccc;
+}
+
+.weather-description {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.weather-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.weather-item img {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.forecast-item img {
+  width: 1rem;
+  height: 1rem;
 }
