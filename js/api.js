@@ -1,24 +1,20 @@
-import { render_left_side } from "./weatherUI";
+import {
+  renderCurrentCityTemp,
+  renderWeatherDetails,
+  renderWeatherForecast,
+} from "./weatherUI";
 
 document.addEventListener("DOMContentLoaded", function () {
   const apiKey = "72850a547f4f40d1bd6111420250708";
   let city = "Bratislava";
-  const search_btn = document.querySelector(".search_div");
-  let city_input = document.querySelector(".search input");
+  const search_btn = document.querySelector(".search-icon");
+  let city_input = document.querySelector(".search");
 
-  // city_input.addEventListener("input", function () {
-  //   if (city_input.value.trim() !== "") {
-  //     search_btn.classList.remove("disabled");
-  //   } else {
-  //     search_btn.classList.add("disabled");
-  //   }
-  // });
-
-  // search_btn.addEventListener("click", () => {
-  //   if (city_input.value.trim() !== "") {
-  //     get_weather_data(city_input.value, apiKey);
-  //   }
-  // });
+  search_btn.addEventListener("click", () => {
+    if (city_input.value.trim() !== "") {
+      get_weather_data(city_input.value, apiKey);
+    }
+  });
 
   async function get_weather_data(city, apiKey) {
     try {
@@ -29,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const { current, location, forecast } = weatherData;
       const { condition } = current;
       const { forecastday } = forecast;
-      console.log(location, current);
-      render_left_side(current, location, condition);
+      console.log(forecastday, current);
+      renderCurrentCityTemp(current, location, condition);
+      renderWeatherDetails(current, forecastday);
+      renderWeatherForecast(forecastday);
     } catch (error) {
       alert(`Error fetching weather data: ${error.message}`);
     }
