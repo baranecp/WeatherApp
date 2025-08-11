@@ -2,6 +2,7 @@ import {
   renderCurrentCityTemp,
   renderWeatherDetails,
   renderWeatherForecast,
+  renderNextDays,
 } from "./weatherUI";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       renderCurrentCityTemp(current, location, condition);
       renderWeatherDetails(current, forecastday);
       renderWeatherForecast(forecastday);
+      renderNextDays(forecastday);
     } catch (error) {
       alert(`Error fetching weather data: ${error.message}`);
     }

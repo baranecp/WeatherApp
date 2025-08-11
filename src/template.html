@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="container overlay">
-    <main class="main">
+    <div class="wrapper">
+      <div class="forecastdays"></div>
       <section class="current">
         <h1 class="current__temp"></h1>
         <span>
@@ -16,56 +17,55 @@
         </span>
         <img class="current__img" alt="weather condition" />
       </section>
-      <!-- Right side -->
-      <section class="weather-right">
-        <div class="search-wrapper">
-          <input class="search" type="text" placeholder="Search Location..." />
-          <img src="./img/fa_search.svg" class="search-icon" alt="Search" />
-        </div>
+    </div>
+    <!-- Right side -->
+    <section class="weather-right">
+      <div class="search-wrapper">
+        <input class="search" type="text" placeholder="Search Location..." />
+        <img src="./img/fa_search.svg" class="search-icon" alt="Search" />
+      </div>
 
-        <p class="section-label">Weather Details...</p>
-        <h3 class="weather-description"></h3>
+      <p class="section-label">Weather Details...</p>
+      <h3 class="weather-description"></h3>
 
-        <div class="weather-item">
-          <p>Temp max</p>
-          <span>
-            <p class="tempmax">19°</p>
-            <img src="./img/info/tempmax.svg" alt="Max temp" />
-          </span>
-        </div>
-        <div class="weather-item">
-          <p>Temp min</p>
-          <span>
-            <p class="tempmin">15°</p>
-            <img src="./img/info/tempmin.svg" alt="Min temp" />
-          </span>
-        </div>
-        <div class="weather-item">
-          <p>Humidity</p>
-          <span>
-            <p class="humidity">58%</p>
-            <img src="./img/info/humidity.svg" alt="Humidity" />
-          </span>
-        </div>
-        <div class="weather-item">
-          <p>Cloudy</p>
-          <span>
-            <p class="cloudy">86%</p>
-            <img src="./img/info/cloudy.svg" alt="Cloudy" />
-          </span>
-        </div>
-        <div class="weather-item">
-          <p>Wind</p>
-          <span>
-            <p class="wind">5km/h</p>
-            <img src="./img/info/wind.svg" alt="Wind" />
-          </span>
-        </div>
-        <hr />
-
-        <p class="section-label">Today’s Weather Forecast…</p>
-        <div class="forecast"></div>
-      </section>
-    </main>
+      <div class="weather-item">
+        <p>Temp max</p>
+        <span>
+          <p class="tempmax">19°</p>
+          <img src="./img/info/tempmax.svg" alt="Max temp" />
+        </span>
+      </div>
+      <div class="weather-item">
+        <p>Temp min</p>
+        <span>
+          <p class="tempmin">15°</p>
+          <img src="./img/info/tempmin.svg" alt="Min temp" />
+        </span>
+      </div>
+      <div class="weather-item">
+        <p>Humidity</p>
+        <span>
+          <p class="humidity">58%</p>
+          <img src="./img/info/humidity.svg" alt="Humidity" />
+        </span>
+      </div>
+      <div class="weather-item">
+        <p>Cloudy</p>
+        <span>
+          <p class="cloudy">86%</p>
+          <img src="./img/info/cloudy.svg" alt="Cloudy" />
+        </span>
+      </div>
+      <div class="weather-item">
+        <p>Wind</p>
+        <span>
+          <p class="wind">5km/h</p>
+          <img src="./img/info/wind.svg" alt="Wind" />
+        </span>
+      </div>
+      <hr />
+      <p class="section-label">Today’s Weather Forecast…</p>
+      <div class="forecast"></div>
+    </section>
   </body>
 </html>

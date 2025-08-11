@@ -20,3 +20,16 @@ export function dateFormatter(date) {
   const final = `${rest} - ${time} `;
   return final;
 }
+
+export function dateFormatterWithoutTime(date) {
+  const currentDate = new Date(date.replace(" ", "T")); // ensure ISO format
+
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+    year: "2-digit",
+  };
+
+  return new Intl.DateTimeFormat("en-GB", options).format(currentDate);
+}

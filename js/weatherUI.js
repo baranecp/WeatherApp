@@ -1,5 +1,5 @@
 import "../src/style.css";
-import { dateFormatter } from "./utils/dateFormatter";
+import { dateFormatter, dateFormatterWithoutTime } from "./utils/dateFormatter";
 
 export function renderCurrentCityTemp(current, location, condition) {
   const currentTemp = document.querySelector(".current__temp");
@@ -47,5 +47,25 @@ export function renderWeatherForecast(forecastday) {
     `;
 
     forecastContainer.appendChild(forecastItem);
+  });
+}
+
+export function renderNextDays(forecastday) {
+  const forecastdays = document.querySelector(".forecastdays");
+  const forecatDaysWithoutToday = forecastday.slice(1);
+  forecastdays.innerHTML = "";
+  forecatDaysWithoutToday.forEach((day) => {
+    const forecastDayItem = document.createElement("div");
+    forecastDayItem.className = "forecastday";
+
+    forecastDayItem.innerHTML = `
+        <p>${dateFormatterWithoutTime(day.date)}</p>
+        <span>
+        <p>${Math.round(day.day.maxtemp_c)}°</p>
+        <img src="${day.day.condition.icon}" />
+        <span>
+      `;
+
+    forecastdays.appendChild(forecastDayItem);
   });
 }
