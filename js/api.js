@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   search_btn.addEventListener("click", () => {
     if (city_input.value.trim() !== "") {
       get_weather_data(city_input.value, apiKey);
+      city_input.value = "";
     }
   });
 
   async function get_weather_data(city, apiKey) {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5&aqi=no&alerts=yes`
+        `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&aqi=no&alerts=yes`
       );
       const weatherData = await response.json();
       const { current, location, forecast } = weatherData;
