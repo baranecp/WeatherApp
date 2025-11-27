@@ -35,7 +35,7 @@ A modern, responsive weather application that displays current weather condition
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/baranecp/WeatherApp.git
    cd WeatherApp
    ```
 
@@ -61,6 +61,3 @@ A modern, responsive weather application that displays current weather condition
 3. Click the search icon to view the weather for that location
 4. View current conditions, weather details, and forecasts
 
-## License
-
-ISC
