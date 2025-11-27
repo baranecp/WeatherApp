@@ -22,7 +22,7 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
-  background: url("../src/img/summer.jpg") no-repeat center center/cover;
+  background: url("../src/img/bg-weather.png") no-repeat center center/cover;
 }
 
 .wrapper {
